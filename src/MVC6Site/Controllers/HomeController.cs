@@ -13,7 +13,7 @@ namespace MVC6Site.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return new JsonResult(new { Name = "MVC6", Message = "Awesomeness" });
+            return View();
         }
     }
 }
