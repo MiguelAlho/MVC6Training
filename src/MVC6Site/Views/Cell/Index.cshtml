@@ -1,0 +1,23 @@
+﻿@model List<CellViewModel>
+@{
+// ViewBag.Title = "Home Page";
+}
+
+<h2>Cells</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cgi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cell in Model)
+        {
+            <tr>
+                <td>@cell.Name</td>
+                <td>@cell.Cgi</td>
+            </tr>
+        }
+    </tbody>
+</table>
