@@ -44,7 +44,22 @@ namespace MVC6Site.Controllers
             //return Index();
         }
 
+        public IActionResult Edit(string id)
+        {
+            var cell = cellRepo.FindById(id);
+            return View(cell);
+        }
 
+        [HttpPost]
+        public IActionResult Edit(string id, CellViewModel cell)
+        {
+            if (ModelState.IsValid)
+            {
+                cellRepo.Update(cell);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 
 

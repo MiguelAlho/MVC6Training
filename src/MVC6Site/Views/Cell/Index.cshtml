@@ -4,6 +4,7 @@
 }
 
 <h2>Cells</h2>
+<a asp-controller="Cell" asp-action="Insert">Insert</a>
 <table>
     <thead>
         <tr>
@@ -15,8 +16,11 @@
         @foreach (var cell in Model)
         {
             <tr>
+                
                 <td>@cell.Name</td>
                 <td>@cell.Cgi</td>
+                <td>@Html.ActionLink("Edit", "Edit", "Cell", routeValues : new { Id = cell.Name }) </td>
+                <td><a asp-controller="Cell" asp-action="Edit" asp-route-id="@cell.Name" >Edit</a></td>
             </tr>
         }
     </tbody>

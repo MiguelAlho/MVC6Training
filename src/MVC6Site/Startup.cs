@@ -22,12 +22,18 @@ namespace MVC6Site
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseMvc(routes =>
-                routes.MapRoute(
-                    "default",  
-                    "{controller}/{action}/{id?}", 
-                    new { Controller = "Home", Action ="Index"}
-                )
+            app.UseStaticFiles();
+
+            app.UseMvc(routes => {
+                    //any route with precedence over default for resolution
+                    //should be added here.
+
+                    routes.MapRoute(
+                        "default",
+                        "{controller}/{action}/{id?}",
+                        new { Controller = "Home", Action = "Index" }
+                    );
+                }
             );
         }
     }

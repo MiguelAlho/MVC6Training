@@ -1,0 +1,14 @@
+﻿@model CellViewModel
+<form asp-controller="Cell" asp-action="Edit" asp-method="Post">
+    <label>Name</label>
+    <input type="text" name="Name" value="@Model.Name"/>
+    <label>Mcc</label>
+    <input type="number" name="Mcc" value="@Model.Mcc" />
+    <label>Mnc</label>
+    <input type="number" name="Mnc" value="@Model.Mnc" />
+    <label>Lac</label>
+    <input type="number" name="Lac" value="@Model.Lac" />
+    <label>CellId</label>
+    <input type="number" name="CellId" value="@Model.CellId"/>
+    <button type="submit">Submit</button>
+</form>
