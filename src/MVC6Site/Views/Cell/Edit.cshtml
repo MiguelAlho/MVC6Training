@@ -1,0 +1,20 @@
+﻿@model CellViewModel
+<form asp-controller="Cell" asp-action="Edit" asp-method="Post">
+    <label>Name</label>
+    <input type="text" asp-for="Name"/>
+    <span asp-validation-for="Name"></span>
+    <label>Mcc</label>
+    <input type="number" asp-for="Mcc"/>
+    <span asp-validation-for="Mcc"></span>
+    <label>Mnc</label>
+    <input type="number" asp-for="Mnc" />
+    <span asp-validation-for="Mnc"></span>
+    <label>Lac</label>
+    <input type="number" asp-for="Lac"/>
+    <span asp-validation-for="Lac"></span>
+    <label>CellId</label>
+    <input type="number" asp-for="CellId"/>
+    <span asp-validation-for="CellId"></span>
+    <button type="submit">Submit</button>
+    <div asp-validation-summary="ValidationSummary.All"></div>
+</form>

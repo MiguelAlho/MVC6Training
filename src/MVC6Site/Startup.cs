@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.DependencyInjection;
+using MVC6Site.Repositories;
+using MVC6Site.Models;
 
 namespace MVC6Site
 {
@@ -14,6 +16,8 @@ namespace MVC6Site
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddSingleton<IRepository<CellViewModel>, InMemoryCellRepository>();
         }
 
         public void Configure(IApplicationBuilder app)

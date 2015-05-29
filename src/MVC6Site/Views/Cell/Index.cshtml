@@ -4,11 +4,13 @@
 }
 
 <h2>Cells</h2>
+<a asp-controller="Cell" asp-action="Insert">Insert</a>
 <table>
     <thead>
         <tr>
             <th>Name</th>
             <th>Cgi</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +19,7 @@
             <tr>
                 <td>@cell.Name</td>
                 <td>@cell.Cgi</td>
+                <td><a asp-controller="Cell" asp-action="Edit" asp-route-id="@cell.Name">Edit</a></td>
             </tr>
         }
     </tbody>
